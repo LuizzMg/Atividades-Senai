@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 08</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 8: Classificador de pessoas</h1> <!--Título-->
+    </header>
+    <label>Digite uma idade: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+  
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+    function executar() {
+        let valora = document.getElementById('entrada1').value;
+
+        let num = parseInt(valora);
+        let resultado = '';
+
+        if(isNaN(num)){
+            resultado = 'Digite uma idade válida'
+        } else{
+            if(num < 13){
+                resultado = 'Criança';
+            } else{
+                if(num < 18){
+                    resultado = 'Adolescente';
+                } else{
+                    resultado = 'Adulto';
+                }
+            }
+        }
+        
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>
