@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 03: Calculadora do crescimento:</h1> <!--Título-->
+    </header>
+
+    <label>Digite a quantidade em anos: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+    function executar() {
+        let resultado = 2;
+        let valor = document.getElementById('entrada1').value;
+
+        let n = parseInt(valor);
+
+        if(isNaN(n)){
+            resultado = 'digite um número válido';
+        } else{
+            for(let i = 2; i <= n; i++){
+                resultado = resultado + resultado;
+            }
+        }
+        document.getElementById('saida').textContent = 'A sua árvore cresceu ' + resultado + 'm em ' + n + ' anos.'
+    }    
+    </script>
+</body>
+</html>

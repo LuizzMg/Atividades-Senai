@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 02: Calculadora do padeiro:</h1> <!--Título-->
+    </header>
+
+    <label>Digite a quantidade de pães: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+
+    <label>Digite a quantidade de broas: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada2"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+  
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+    function executar() {
+        let resultado = 0;
+        let paes = document.getElementById('entrada1').value;
+        let broas = document.getElementById('entrada2').value;
+
+        let p = parseInt(paes);
+        let b = parseInt(broas);
+        let pv = 0.5;
+        let bv = 1.5;
+        let total = 0;
+
+        if(isNaN(p) || isNaN(b)){
+            resultado = 'Digite um número válido';
+        } else{
+            if(p < 0 || b < 0){
+                resultado = 'Você não pode vender produtos negativos';
+            } else{
+                pv = p * pv;
+                bv = b * bv;
+                total = bv + pv;
+                resultado = 'Você está vendendo ' + p + ' pães: ' + 'R$' + pv + '\n' + 
+                'e também ' + b + ' Broas: ' + 'R$' + bv + '.' + '\n' + 
+                'O total da compra é: ' + 'R$' + total;
+            }
+        }
+
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>

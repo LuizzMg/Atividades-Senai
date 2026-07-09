@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 05</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 05: Lanchonete</h1> <!--Título-->
+    </header>
+
+    <label> Faça seu pedido:<br>
+            1 - Hambúrguer R$12,00<br>
+            2 - Pizza R$20,00<br>
+            3 - Refrigerante R$5,00<br>
+            4 - Finalizar pedido<br>
+ <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+        let resultado = '';
+        let ht = 0;
+        let pt = 0;
+        let rt = 0;
+        let total = 0;
+
+    function executar() {
+        let valor = document.getElementById('entrada1').value;
+
+        let n = parseInt(valor);
+
+        if(isNaN(n) || n < 1 || n > 4){
+            resultado = 'O ID do pedido não está na lista';
+        } else{
+                switch(n){
+                case 1:
+                    ht = ht + 1;
+                    total = total + 12;
+                    break;
+                case 2:
+                    pt = pt + 1;
+                    total = total + 20;
+                    break;
+                case 3:
+                    rt = rt + 1;
+                    total = total + 5;
+                    break;
+                case 4:
+                    resultado = 'Pedido finalizado: ' + '\n' + 
+                    'Hambúrgueres: ' + ht + '\n' + 
+                    'Pizzas: ' + pt + '\n' + 
+                    'Refrigerantes: ' + rt + '\n' + 
+                    'Total do pedido: R$' + total;
+            }
+        }
+        document.getElementById('saida').textContent = resultado
+    }    
+    </script>
+</body>
+</html>

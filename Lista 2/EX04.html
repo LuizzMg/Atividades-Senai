@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 04</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 04: Senha</h1> <!--Título-->
+    </header>
+
+    <label>Digite a senha: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+    function executar() {
+        let resultado = '';
+        let sc = 4321
+        let valor = document.getElementById('entrada1').value;
+
+        let senha = parseInt(valor);
+
+        if(isNaN(senha)){
+            resultado = 'Digite uma senha válida';
+        } else{
+            if(senha == sc){
+                resultado = 'Senha correta! Acesso liberado';
+            } else{
+                resultado = 'Senha incorreta! Digite novamente';
+            }
+        }
+        document.getElementById('saida').textContent = resultado
+    }    
+    </script>
+</body>
+</html>
