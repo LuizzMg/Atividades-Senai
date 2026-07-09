@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 02</title>
+</head>
+<body>
+    <header>
+        <h1>Volume de uma esfera:</h1> 
+    </header>
+
+    <label>Informe o Raio da esfera:</label>
+    <input type="number" id="r">
+    <br>
+
+    <button onclick="executar()">Executar</button>
+    <pre id="saida"></pre>
+
+    <script>  
+        function executar() {
+            let pi = 3.14159;
+            let raio = document.getElementById('r').value;
+            let r = parseInt(raio);
+            let res = 0;
+
+            if(isNaN(r) || r < 0){
+                res = 'Digite um número válido';
+            } else{
+                res = 'Volume da esfera: ' + (4 / 3) * pi * (r * r * r) + 'cm³.';
+            }
+            document.getElementById('saida').textContent = res;
+        }
+
+    </script>
+</body>
+</html>

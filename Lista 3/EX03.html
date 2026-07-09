@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <header>
+        <h1>Área das faces de um cubo:</h1> 
+    </header>
+
+    <label>Informe o Comprimento de um dos vértices do cubo (cm):</label>
+    <input type="number" id="v">
+    <br>
+
+    <button onclick="executar()">Executar</button>
+    <pre id="saida"></pre>
+
+    <script>
+        function executar() {
+            let vertice = document.getElementById('v').value;
+            let v = parseInt(vertice);
+
+            let Af1 = 0; //Variável para informar área total de um lado do cubo
+            let Ac = 0; //Variável para informar área total do cubo
+            let res = 0;
+
+            if(isNaN(v) || v < 0) {
+                res = 'Digite um número válido.';
+            } else {
+                Af1 ='Área de uma das faces do cubo: ' + v * v + 'cm².';
+                Ac = 'Área total das faces do cubo: ' + (v * v) * 6 + 'cm²';
+                res = Af1 + '\n' + Ac;
+            }
+            document.getElementById('saida').textContent = res;
+        }
+    </script>

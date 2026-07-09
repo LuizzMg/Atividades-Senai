@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body>
+    <header>
+        <h1>Volume do paralelepído:</h1> 
+    </header>
+
+    <label>Informe a altura do paralelepípedo (cm):</label>
+    <input type="number" id="al">
+    <br>
+
+    <label>Informe a largura do paralelepípedo (cm):</label>
+    <input type="number" id="la">
+    <br>
+
+    <label>Informe a profundidade do paralelepípedo (cm):</label>
+    <input type="number" id="pr">
+    <br>
+
+    <button onclick="executar()">Executar</button>
+    <pre id="saida"></pre>
+
+    <script>
+        function executar() {
+            let altura = document.getElementById('al').value;
+            let a = parseInt(altura);
+
+            let largura = document.getElementById('la').value;
+            let l = parseInt(largura);
+
+            let profundidade = document.getElementById('pr').value;
+            let p = parseInt(profundidade);
+
+            let res = 0;
+
+            if(isNaN(a) || isNaN(l) || isNaN(p) || a < 0 || l < 0 || p < 0) {
+                res = 'Digite um número válido.';
+            } else {      
+                res = 'Volume do paralelepído : ' + (a * l * p) + 'cm³.';
+            }
+            document.getElementById('saida').textContent = res;
+        }
+    </script>
