@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 13</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 13: Pares:</h1> <!--Título-->
+    </header>
+    
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+    function executar() {
+         let resultado = '';
+
+        for(let i = 0; i <=100; i += 2) {
+            resultado = resultado + i + '\n';
+        }
+
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>
