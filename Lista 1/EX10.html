@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 10</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 10: Contagem de -10 até 10</h1> <!--Título-->
+    </header>
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+    function executar() {
+        let resultado = '';
+
+        for(let i = -10; i <= 10; i++){
+            resultado = resultado + i + ' ';
+        }
+
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>
