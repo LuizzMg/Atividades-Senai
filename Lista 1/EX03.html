@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 03</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 3: Média de 3 valores</h1> <!--Título-->
+    </header>
+    <label>Digite primeiro valor: <!--Texto exibido para o usuário-->
+        <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br><label>Digite o segundo valor:
+        <input type="number" id="entrada2">
+    <br><label>Digite o terceiro valor:
+        <input type="number" id="entrada3">
+    <br><button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+    function executar() {
+        let valora = document.getElementById('entrada1').value;
+        let valorb = document.getElementById('entrada2').value;
+        let valorc = document.getElementById('entrada3').value;
+
+        let numa = parseInt(valora);
+        let numb = parseInt(valorb);
+        let numc = parseInt(valorc);
+
+        let resultado = '';
+
+        if(isNaN(numa) || isNaN(numb) || isNaN(numc)){
+            resultado = 'Digite número válido';
+        } else {
+            resultado = (numa + numb + numc) / 3;
+        }
+
+        document.getElementById('saida').textContent = resultado; 
+    }
+    </script>
+</body>
+</html>
