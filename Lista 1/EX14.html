@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 14</title>
+</head>
+<body>
+    <h1>Exercício 14: Maior numero informado ;-;</h1>
+
+    <label>Digite o primeiro número:</label>
+    <input type="number" id="Ent1">
+    <br>
+
+    <label>Digite o segundo número:</label>
+    <input type="number" id="Ent2">
+    <br>
+
+    <label>Digite o terceiro número:</label>
+    <input type="number" id="Ent3">
+    <br>
+
+    <label>Digite o quarto número:</label>
+    <input type="number" id="Ent4">
+    <br>
+
+    <label>Digite o quinto número:</label>
+    <input type="number" id="Ent5">
+    <br>
+
+    <button onclick="executar()">Executar</button>
+    <br>
+
+    <pre id="saida"></pre>
+
+    <script>
+        function executar(){
+            let v1 = document.getElementById('Ent1').value;
+            let v2 = document.getElementById('Ent2').value;
+            let v3 = document.getElementById('Ent3').value;
+            let v4 = document.getElementById('Ent4').value;
+            let v5 = document.getElementById('Ent5').value;
+    
+
+            let n1 = parseInt(v1);
+            let n2 = parseInt(v2);
+            let n3 = parseInt(v3);
+            let n4 = parseInt(v4);
+            let n5 = parseInt(v5);
+            let resultado = '';
+
+            if(isNaN(n1) || isNaN(n2) || isNaN(n3) || isNaN(n4) || isNaN(n5)){
+                resultado = 'Número inválido';
+            } else{
+                if(n1 > n2 && n3 && n4 && n5){
+                    resultado = n1;
+                } else{
+                    if(n2 > n3 && n4 && n5){
+                        resultado = n2;
+                    } else{
+                        if(n3 > n4 && n5){
+                            resultado = n3;
+                        } else{
+                            if(n4 > n5){
+                                resultado = n4;
+                            } else{
+                                resultado = n5;
+                            }
+                        }
+                    }
+                }
+            }
+
+        document.getElementById('saida').textContent = resultado;
+        }
+        
+    </script>
+</body>
+</html>
