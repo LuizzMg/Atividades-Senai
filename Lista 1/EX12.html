@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 12</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 12: Somatória:</h1> <!--Título-->
+    </header>
+    <label>Digite uma número: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+  
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+
+    function executar() {
+         let resultado = 0;
+         let valor = document.getElementById('entrada1').value;
+            let num = parseInt(valor);
+
+            if(isNaN(num) || num < 2){
+                resultado = 'Insira um valor valido'
+            } else{
+                for(let s = 1; s <= num; s++){
+                    resultado = resultado + s;
+                }
+            }
+
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>
