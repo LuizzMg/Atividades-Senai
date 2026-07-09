@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercício 06</title>
+</head>
+<body>
+    <header>
+        <h1>Exercício 6: Teste de aluno</h1> <!--Título-->
+    </header>
+    <label>Digite a nota do aluno: <!--Texto exibido para o usuário-->
+    <input type="number" id="entrada1"> <!--Entrada do primeiro valor (diferentes tipos, nesse caso "número")-->
+    <br>
+  
+    <button onclick="executar()"> Executar </button> <!--Botão para execução da tarefa :)-->
+    <pre id="saida"></pre> <!--Campo de texto pré formatado-->
+
+    <script> //Início do JavaScript
+    function executar() {
+        let valora = document.getElementById('entrada1').value;
+
+        let num = parseInt(valora);
+        let resultado = '';
+        
+        if(isNaN(num) || (num > 100)){
+          resultado = 'Digite um número válido';
+        } else{
+          if(num < 60){
+            resultado = 'Reprovado';
+            } else{
+              resultado = 'Aprovado';
+          }
+        }
+        document.getElementById('saida').textContent = resultado;
+    }    
+    </script>
+</body>
+</html>
